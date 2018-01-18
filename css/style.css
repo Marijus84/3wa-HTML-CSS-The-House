@@ -1,38 +1,37 @@
 *{
   box-sizing: border-box;
+  max-width: 1300px;
+   margin: auto;
 }*
 
 body {
-  /*font-family: 'Courgette', cursive;*/
   font-family: 'Open Sans', sans-serif;
   background-color: #94BADF;
 }
 
 h1 {
+    font-size: 3em;
+    color: white;
+}
+
+h1, h2, h3, h4 {
   text-align: center;
-  font-size: 3em;
   font-family: 'Courgette', cursive;
-  color: white;
 }
 
 h2 {
-  text-align: center;
   font-size: 2.5em;
-  font-family: 'Courgette', cursive;
   color: #4D74A7;;
 }
 
 h3 {
-  text-align: center;
   font-size: 1.1em;
-  font-family: 'Courgette', cursive;
   color: white;
 }
 
 h4 {
-  text-align: center;
   font-size: 1.1em;
-  font-family: 'Courgette', cursive;
+  padding: 1em 0;
   color:#90C01F;
 }
 
@@ -43,13 +42,14 @@ h4 {
 }
 
 .flex-container {
+  display: flex;
   flex-direction: row;
 }
 
 .container {
   position: relative;
   max-width: 80%;
-  transform: translateY(-50px);
+  transform: translateY(-25px);
   background-color: white;
   margin: 0 auto;
 }
@@ -85,24 +85,49 @@ input {
 }
 
 .video {
-  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
-        }
+}
 
-        .intro {
+.intro {
   position: absolute;
-  /* top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0; */
   text-align: center;
-                }
+}
+
 @media screen and (min-width: 464px) {
 header {
   position: absolute;
   top: 0;
+}
+
+@media only screen and (min-width: 800px) {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 580px)
+{
+  h1 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 0.8em;
+  }
+
+  nav a {
+    font-size: 0.7em;
+  }
 }
 
   header ul {
@@ -114,14 +139,11 @@ justify-content: space-around;
 form {
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 100%;
   background-color: #4D74A7;
 }
 
 img {
   max-width: 100%;
-  padding-left: 1em;
-  padding-right: 1em;
 }
 
 .green {
@@ -139,21 +161,29 @@ footer {
 }
 
 .announ {
-
+  margin: 1em;
+  position: relative;
   border-style: solid;
   border-width: thin;
   border-color: lightgrey;
 }
 
 .pricetag {
-  position: relative;
-  top: 100px;
+  position: absolute;
+  top: 80px;
   left: -10px;
-  padding-top: 10px;
+  padding: 6px;
   text-align: center;
-  width: 120px;
-  height: 40px;
+  z-index: 2;
   background: linear-gradient(#BED154,#90C01F,#BED154);
   color: white;
   border-radius: 0.5em;
+}
+
+.announ img {
+    transition: 1s ease;
+}
+
+.announ img:hover {
+  transform: translateY(10px) scale(1.3);
 }
